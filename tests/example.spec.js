@@ -112,13 +112,13 @@ test("Atualização parcial @regressivo", async ({ request }) => {
     },
 
     data: {
-      firstname: "herbert",
+      firstname: "Jones",
 
-      lastname: "herbertao",
+      lastname: "Ports",
 
-      totalprice: 111,
+      totalprice: 222,
 
-      depositpaid: false,
+      depositpaid: true,
     },
   });
 
@@ -130,11 +130,11 @@ test("Atualização parcial @regressivo", async ({ request }) => {
 
   const partialUpdatedResponseBody = await partialUpdateRequest.json();
 
-  expect(partialUpdatedResponseBody).toHaveProperty("firstname", "herbert");
+  expect(partialUpdatedResponseBody).toHaveProperty("firstname", "Jones");
 
-  expect(partialUpdatedResponseBody).toHaveProperty("lastname", "herbertao");
+  expect(partialUpdatedResponseBody).toHaveProperty("lastname", "Ports");
 
-  expect(partialUpdatedResponseBody).toHaveProperty("totalprice", 111);
+  expect(partialUpdatedResponseBody).toHaveProperty("totalprice", 222);
 
-  expect(partialUpdatedResponseBody).toHaveProperty("depositpaid", false);
+  expect(partialUpdatedResponseBody).toHaveProperty("depositpaid", true);
 });
