@@ -75,7 +75,7 @@ test("Cadastrando uma nova reserva", async ({ request }) => {
   expect(responseBody.booking).toHaveProperty("additionalneeds", "Breakfast");
 });
 
-test("Atualização parcial", async ({ request }) => {
+test("Atualização parcial @regressivo", async ({ request }) => {
   // criando o token
 
   const response = await request.post("/auth", {
